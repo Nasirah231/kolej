@@ -1,0 +1,29 @@
+{%  extends 'systems/main.html' %}
+{% block content %}
+{%  include 'systems/status.html' %}
+
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <table class="table table-sm">
+                <tr>
+                    <th>Name</th>
+                    <th>Date Apply</th>
+                    <th>Status</th>
+                </tr>
+
+                {% for order in orders %}
+
+                <tr>
+                    <td>{{order.name}}</td>
+                    <td>{{order.date_apply}}</td>
+                    <td>{{order.status}}</td>
+                </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
